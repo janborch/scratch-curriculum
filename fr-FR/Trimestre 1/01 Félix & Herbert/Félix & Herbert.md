@@ -8,33 +8,27 @@ On va jouer au chat et à la souris avec __Félix le chat__ et __Herbert__ la so
 ##Étape 1 : Félix suit le pointeur de souris
 
 1. Commence un nouveau projet (“Fichier" dans le menu du haut, puis “Nouveau”).
-2. Clique sur la scène près du chat et sélectionne l’onglet “Arrière-plan”. Importe l’arrière-plan “hall” dans la catégorie ”Indoors” et supprime l'arrière-plan vide d’origine. 
-3. Change le nom du chat et appelle-le “Félix”.
+2. Clique sur la scène près du chat et sélectionne l’onglet “Arrière-plans”. Clique ensuite sur l'icône "Choisir un arrière-plan dans la bibliothèque" et choisis "hall" dans la catégorie "Intérieur". Supprime ensuite l'arrière-plan vide d’origine. 
+3. Dans la section "Lutins" clique sur le chat et clique sur le "i" qui se trouve en haut à gauche. Change son nom et appelle-le “Félix”.
 4. Fais en sorte que Félix puisse seulement se retourner horizontalement, de gauche à droite, en cliquant sur ce bouton : Flèche horizontale à 2 pointes.
 5. Crée le script suivant :
 
 ```scratch
 
 	quand DRAPEAU pressé
-
 	répéter indéfiniment
-
-		pointer vers pointeur de souris
-
-		avancer de 10 pas
-
+		s'orienter vers pointeur de souris
+		avancer de 10 pixels
 		costume suivant
-
-		jouer tambour 62 pour 0.3 temps
-
+		jouer du tambour 3 pour 0.3 temps
 	(fin répéter indéfiniment)
 ```
 		
 ###Teste ton projet
 __Clique sur le drapeau vert.__
-Est-ce que Félix suit bien le pointeur de ta souris ? 
-Est-ce qu’il a l’air de marcher quand il avance ? 
-Est-ce qu’il avance à la bonne vitesse ?
+Est-ce que Félix suit bien le pointeur de ta souris? 
+Est-ce qu’il a l’air de marcher quand il avance? 
+Est-ce qu’il avance à la bonne vitesse?
 
 Enregistre ton projet
 
@@ -42,10 +36,10 @@ Enregistre ton projet
 
 __Maintenant nous voulons que Félix poursuive Herbert plutôt que le pointeur de souris.__
 
-1. Crée un nouveau personnage en cliquant sur le bouton “Choisir un nouvel objet dans un dossier” et choisis “Mouse1” dans la catégorie “Animals”.
+1. Crée un nouveau lutin en cliquant sur le bouton “Choisir un lutin dans la bibliothèque” et choisis “Mouse1” dans la catégorie “Animaux”.
 2. Change le nom du personnage pour qu’il s’appelle “Herbert”.
-3. Modifie son costume et rends-le plus petit que Félix. Essaie en cliquant 6 fois fois sur le bouton “Réduire”, celui avec 4 flèches pointant vers le centre.
-4. Assure-toi que Herbert ne puisse se tourner que de manière horizontale, de gauche à droite. 
+3. Dans l'onglet "Costumes" clique sur le costume qui se trouve dans l'éditeur. Une case apparait alors autours du cosutume. En déplaçant les coins, reduits la taille de Herbert pour qu'il soit plus petit que Félix.
+4. Assure-toi que Herbert ne puisse se tourner que de manière horizontale, de gauche à droite en cliquant sur le bouton: Flèche horizontale à 2 pointes.
 5. Créé le script suivant pour Herbert :
 
 
@@ -53,15 +47,16 @@ __Maintenant nous voulons que Félix poursuive Herbert plutôt que le pointeur d
 	
 	quand DRAPEAU pressé
 	répéter indéfiniment
-		Aller à pointeur de souris
-		Pointer vers Félix
+		aller à pointeur de souris
+		s'orienter vers Félix
 	(fin répéter indéfiniment)
 ```
 
 ###Teste ton projet
 __Clique sur le drapeau vert.__
 
-Est-ce que Herbert bouge avec le pointeur de souris ? Est-ce que Félix poursuit Herbert ?
+Est-ce que Herbert bouge avec le pointeur de souris?
+Est-ce que Félix poursuit Herbert?
 
 Enregistre ton projet.
 
@@ -76,12 +71,12 @@ __On veut que Félix sache quand il a attrapé Herbert, et qu'il nous le dise.__
 	
 	quand drapeau pressé
 	répéter indéfiniment
-		pointer vers pointeur de souris
-		avancer de 10 pas
+		s'orienter vers pointeur de souris
+		avancer de 10 pixels
 		costume suivant
-		jouer tambour 62 pour 0.3 temps
-		si Herbert touché 
-			dire Je t’ai attrapé ! pendant 1 seconde
+		jouer du tambour 3 pour 0.3 temps
+		si Herbert touché? alors
+			dire Je t’ai attrapé! pendant 1 secondes
 		(fin si)
 	(fin répéter indéfiniment)
 ```
@@ -89,13 +84,11 @@ __On veut que Félix sache quand il a attrapé Herbert, et qu'il nous le dise.__
 ###Teste ton projet
 __Clique sur le drapeau vert.__
 
-Est-ce que Félix dit quelque chose quand il touche Herbert ?
+Est-ce que Félix dit quelque chose quand il touche Herbert?
 
 Enregistre ton projet
 
 ##Étape 4 : Herbert se transforme en fantôme quand il se fait attraper
-
-__Modifie le script de Félix pour envoyer un message quand il attrape Herbert:__
 
 1. Modifie le script de Félix pour envoyer un message quand il attrape Herbert:
 
@@ -103,14 +96,14 @@ __Modifie le script de Félix pour envoyer un message quand il attrape Herbert:_
 	
 	quand drapeau pressé
 	répéter indéfiniment
-		se diriger vers pointeur de souris
-		avancer de 10 pas
+		s'orienter vers pointeur de souris
+		avancer de 10 pixels
 		costume suivant
-		jouer tambour 62 pour 0.3 temps
+		jouer du tambour 3 pour 0.3 temps
 		si Herbert touché 
-			envoyer à tous Attrapé
-			jouer tambour 58 pour 0.2 temps
-			attendre 1 seconde
+			envoyer à tous attrapé
+			jouer du tambour 17 pour 0.2 temps
+			attendre 1 secondes
 		(fin si)
 	(fin répéter indéfiniment)
 ```
