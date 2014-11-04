@@ -89,6 +89,7 @@ Est-ce que Félix dit quelque chose quand il touche Herbert?
 Enregistre ton projet
 
 ##Étape 4 : Herbert se transforme en fantôme quand il se fait attraper
+__On veut que Herbert sache quand il se fait attraper et se transforme en fantôme.__
 
 1. Modifie le script de Félix pour envoyer un message quand il attrape Herbert:
 
@@ -130,8 +131,7 @@ Est ce que Félix reste immobile assez longtemps pour que Herbert puisse s’éc
 Enregistre ton projet.
 
 ##Étape 5 : Compte les Points
-
-Le score commencera à zéro et il sera augmenté d’un point par seconde. Si Félix attrape Herbert, le score devra diminuer de 100 points.
+__Le score commencera à zéro et il sera augmenté d’un point par seconde. Si Félix attrape Herbert, le score devra diminuer de 100 points.__
 
 1. Crée une variable pour tous les lutins, appelée “Score” : choisis l’option “Données” dans l’onglet “Scripts”, puis clique sur “Créer une variable” assure-toi que la case "Pour tous les lutins" est coché.
 2. Sélectionne la scène et crée les deux scripts suivants :
