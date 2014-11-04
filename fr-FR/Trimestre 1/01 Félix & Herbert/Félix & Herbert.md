@@ -107,55 +107,55 @@ Enregistre ton projet
 		(fin si)
 	(fin répéter indéfiniment)
 ```
-2. Importe le costume “ghost2-a” pour Herbert : va dans l’onglet “Costumes” puis dans la catégorie “Fantasy”.
-3. Rends le costume plus petit: clique 6 fois fois sur le bouton “Réduire”.
+2. Ajoute un nouveau costume à Herbert en séléctionnat Herbert, va ensuite dans l'onglet "Costumes" et clique sur "Choisir un costume dans la bibliothèque". Choisis le costume "ghost2-a" dans la catégorie "Fantasie"
+3. Rends le costume plus petit en cliquant sur le costume dans l'éditeur et en déplaçant ensuite les coins qui entourent le costume.
 4. Renomme les costumes d’Herbert de façon à appeler le costume de la souris “vivant” et le costume du fantôme “mort”.
 5. Crée le script suivant pour Herbert, pour le transformer en fantôme :
 
 ```scratch
 	
-	quand je reçois Attrapé
-	basculer sur le costume mort
-	attendre 0.5 secondes
-	basculer sur le costume vivant
+	quand je reçois attrapé
+	basculer sur costume mort
+	attendre 1 secondes
+	basculer sur costume vivant
 ```
 	
 ###Teste ton projet
 __Clique sur le drapeau vert.__
 
-Est ce que Herbert devient un fantôme quand il se fait attraper ? 
-Est ce que Félix joue le bon son au bon moment ? 
-Est ce que Félix reste immobile assez longtemps pour que Herbert puisse s’échapper ? 
+Est ce que Herbert devient un fantôme quand il se fait attraper? 
+Est ce que Félix joue le bon son au bon moment? 
+Est ce que Félix reste immobile assez longtemps pour que Herbert puisse s’échapper? 
 
 Enregistre ton projet.
 
 ##Étape 5 : Compte les Points
 
-__Le score commencera à zéro et il sera augmenté d’un point par seconde. Si Félix attrape Herbert, le score devra diminuer de 100 points.__
+Le score commencera à zéro et il sera augmenté d’un point par seconde. Si Félix attrape Herbert, le score devra diminuer de 100 points.
 
-1. Crée une variable pour tous les objets, appelée “Score” : choisis l’option “Variables” dans l’onglet “Scripts”, puis clique sur “Nouvelle variable”. 
+1. Crée une variable pour tous les lutins, appelée “Score” : choisis l’option “Données” dans l’onglet “Scripts”, puis clique sur “Créer une variable” assure-toi que la case "Pour tous les lutins" est coché.
 2. Sélectionne la scène et crée les deux scripts suivants :
 
 ```scratch
 	
 	quand drapeau pressé
-	à score attribuer 0
+	mettre Score à 0
 	répéter indéfiniment
-		changer score par 1
-		attendre 1 seconde
+		ajouter à Score 1
+		attendre 1 secondes
 	(fin répéter indéfiniment)
 	
 	quand je reçois Attrapé
-	changer score par -100
+	ajouter à Score -100
 ```
 	
 ###Teste ton projet
 __Clique sur le drapeau vert__
 
-Est-ce que le score augmente d’un point par seconde ? 
-Est-ce que le score diminue de 100 points quand Herbert se fait attraper ? 
-Que se passe-t-il quand Herbert se fait attraper avant que le score n’atteigne 100 ? 
-Est-ce que le score redémarre à zéro quand tu commences une nouvelle partie ?
+Est-ce que le score augmente d’un point par seconde? 
+Est-ce que le score diminue de 100 points quand Herbert se fait attraper? 
+Que se passe-t-il quand Herbert se fait attraper avant que le score n’atteigne 100? 
+Est-ce que le score redémarre à zéro quand tu commences une nouvelle partie?
 
 Enregistre ton projet
 
