@@ -8,47 +8,38 @@ Ce projet est comme le jeu du __Tir aux Pigeons__. Tu gagnes des points en touch
 ##Étape 1 : Crée une sorcière volante
 
 1. Démarre un nouveau projet Scratch
-2. Enlève l’objet chat et remplace l’arrière plan par l’arrière plan __nature/woods__.
-3. Clique sur le bouton `Choisir un nouvel objet dans un dossier` pour ajouter un nouvel objet au projet (utilise le costume __fantasy/witch1__). 
+2. Enlève le lutin chat et remplace l’arrière plan de la scène par l’arrière plan `woods` dans la catégorie `Dehors`.
+3. Clique sur le bouton `Choisir un lutin dans la bibliothèque` pour ajouter un nouveau lutin au projet (utilise le costume `fantasie\witch`). Renomme le nom du lutin en: "Sorcière".
 
 __Maintenant, nous voulons faire bouger notre sorcière.__
 
-4. Ajoute une `variable` pour l’objet sorcière. Appelle la variable `vitesse ` et coche “Seulement pour cet objet” Sur la __scène__, tu dois voir écrit “Objet 1 vitesse”. Si il est écrit seulement “vitesse”, supprime la variable et recommence. Lors de la création, il faut s’assurer de cliquer sur le bouton ‘Seulement pour cet objet”. On ne veut pas afficher la vitesse. Clique sur la zone à gauche de la variable ‘vitesse' dans __la palette des variables__. La variable ‘vitesse’ va contrôler la vitesse de déplacement de la sorcière. Nous allons utiliser une variable pour pouvoir changer la vitesse au cours du jeu.
+4. Crée une `variable` pour l’objet sorcière. Appelle la variable __vitesse__ et coche la case `Pour ce lutin uniquement`. Sur __scène__, tu dois voir écrit “Sorcière: vitesse”. S'il est écrit seulement “vitesse”, supprime la variable et recommence. Lors de la création, il faut s’assurer de cliquer sur le bouton `Pour ce lutin uniquement`. On ne veut pas afficher la vitesse. Décoche la case à gauche de la variable `vitesse` dans __Données__. La variable `vitesse` va contrôler la vitesse de déplacement de la sorcière. Nous allons utiliser cette variable pour pouvoir changer la vitesse au cours du jeu.
 5. Nous voulons que la sorcière commence à bouger quand le jeu démarre. __Écris donc un script comme ceci__ :
 
 ```scratch
 
 	Quand drapeau préssé
-
-	à vitesse attriber 5
-
+	mettre vitesse à 5
 	répéter indéfiniment
-
-		avancer de vitesse pas
-
+		avancer de 1 pixel
 	(fin répéter indéfiniment)
 ```
 		
 ###Teste ton projet
 __Clique sur le drapeau vert__ et regarde ce que fait ta sorcière. Pourquoi reste-t-elle collée dans le coin de l’écran ?
 
-6. Pour décoller la sorcière nous devons la faire partir dans l’autre sens quand elle touche le bord de l’écran. Au niveau de ton script, au dessous du bloc `avancer de vitesse pas ` ajoute le bloc `rebondir si le bord est atteint` 
+6. Pour décoller la sorcière nous devons la faire partir dans l’autre sens quand elle touche le bord de l’écran. Au niveau de ton script, au dessous du bloc `avancer de 1 pixel ` ajoute le bloc `rebondir si le bord est atteint`.
 
 ```scratch
 
 	Quand drapeau préssé
-
-	à vitesse attriber 5
-
+	mettre vitesse à 5
 	répéter indéfiniment
-
-		avancer de vitesse pas
-
+		avancer de 1 pixel
 		rebondir si le bord est atteint
-
 	(fin répéter indéfiniment)
 ```
-7. Pour que la sorcière n'ait pas la tête en bas quand elle touche le bord, clique sur le bouton `retournement gauche-droite uniquement`. 
+7. Pour que la sorcière n'ait pas la tête en bas quand elle touche le bord, clique sur le bouton `Flèche horizontale à 2 pointes`. 
 
 ###Teste ton projet
 __Clique sur le drapeau vert.__ 
@@ -70,50 +61,42 @@ __Crée ce script pour la sorcière :__
 
 ```scratch
 
-	quand drapeau préssé 
-
+	quand drapeau préssé
 	répéter indéfiniment
-
 		cacher
-
 		attendre nombre aléatoire entre 2 et 5 secondes
-
 		montrer
-
 		attendre nombre aléatoire entre 3 et 5 secondes
-
 	(fin répéter indéfiniment)
 ```
 ###Teste ton projet
 __Clique sur le drapeau vert.__ 
-Est-ce que la sorcière se déplace d’un bord à l’autre de l’acran, apparaît et disparaît d’une manière aléatoire ?
+Est-ce que la sorcière se déplace d’un bord à l’autre de l’écran, apparaît et disparaît d’une manière aléatoire?
 
 Enregistre ton projet.
 
 ###A essayer
-__Essaie de changer les limites des nombres aléatoires. Qu’est ce qui se passe si tu choisis de grands nombres ou de petits nombres ?__
+__Essaie de changer les limites des nombres aléatoires. Qu’est ce qui se passe si tu choisis de grands nombres ou de petits nombres?__
 (Est-ce que ça te donne plus d’indices sur la manière d’accélerer la vitesse de la sorcière au fur et à mesure du jeu ?)
 
 ##Étape 3 : Fais disparaître la sorcière quand on clique dessus
 
 Pour transformer notre projet en jeu, il faut donner aux joueurs quelque chose à faire. Ils ont besoin de cliquer sur la sorcière pour la faire disparaître. Quand ils la touchent, nous voulons qu’elle disparaisse tout en jouant un son.
 
-1. Dans l’onglet __son__, importe le son __electronic/fairydust__. 
+1. Dans l’onglet `Sons`, choisis le son `electronique\fairydust` de la bibliothèque. 
 
 2. Ajoute ce script à la sorcière:
 
 ```scratch
 
-	quand objet 1 pressé
-
+	quand ce lutin est cliqué
 	cacher
-
 	jouer le son Fairydust
 ```
 ###Teste ton projet
 __Clique sur le drapeau vert__ 
 
-Est ce que la sorcière disparaît et joue un son quand tu cliques sur elle ?
+Est ce que la sorcière disparaît et joue un son quand tu cliques sur elle?
 
 Enregistre ton projet
 
@@ -122,41 +105,31 @@ __Demande si tu peux enregistrer toi même ta voix__
 
 ##Étape 4 : Ajoute un score et un chronomètre
 
-Nous avons notre sorcière , mais nous voulons réaliser un vrai jeu ! Nous voulons marquer des points à chaque fois que nous cliquons sur la sorcière, ainsi qu’un temps de jeu limité. On va utiliser une variable pour le score et une pour le chronomètre.
+Nous avons notre sorcière, mais nous voulons réaliser un vrai jeu! Nous voulons marquer des points à chaque fois que nous cliquons sur la sorcière, ainsi qu’un temps de jeu limité. On va utiliser une variable pour le score et une pour le chronomètre.
 
 
-1. Crée une nouvelle `variable`. Appelle la __Score__ et coche “Pour tous les objets”. Et change le script de la sorcière pour que le score augmente d’un point chaque fois qu’elle est pressée. 
+1. Crée une nouvelle `variable`, appelle-la __score__ et coche `Pour tous les lutins`. Change ensuite le script de la sorcière pour que le score augmente d’un point chaque fois qu’elle est pressée. 
 
 ```scratch
 
 	quand objet 1 pressé
-
 	cacher
-
 	jouer le son Fairydust
-
-	changer score par 1
+	ajouter à score 1
 ```
 
-2. Clique sur la __scène__ et crée une __nouvelle variable__ (cette fois juste pour la scène). Appelle la __chronomètre__. Ajoute un nouveau script qui s’exécute quand on appuie sur le drapeau vert. Le script met le chronomètre à __30__ et remet le score à __0__. Ensuite, utilise le bloc “répéter jusqu’à” pour attendre une seconde puis diminuer le “chronomètre” par 1. Il faut répéter tout ça jusqu’à ce que le chronomètre soit à 0. A ce moment là, utilise le bloc “arrêter tout” pour arrêter le jeu. 
+2. Clique sur la __scène__ et crée une __nouvelle variable__. Appelle-la __chronomètre__. Ajoute un nouveau script qui s’exécute quand on appuie sur le drapeau vert. Le script met le chronomètre à __30__ et remet le score à __0__. Ensuite, utilise le bloc `répéter jusqu’à` pour attendre une seconde puis diminuer le `chronomètre` par 1. Il faut répéter tout ça jusqu’à ce que le chronomètre soit à 0. A ce moment là, utilise le bloc `stop tout` pour arrêter le jeu. 
 
 ```scratch
 
 	quand drapeau pressé
-
-	à chronomètre attribuer 30
-
-	à score attribuer 0
-
+	mettre chronomètre à 30
+	mettre score à 0
 	répéter jusqu’à chronomètre = 0
-
 		attendre 1 seconde
-
-		changer score par -1
-
+		ajouter à chronomètre -1
 	(fin répéter)
-
-	arrêter tout
+	stop tout
 ```
 
 
@@ -166,10 +139,10 @@ __Clique sur le drapeau vert__
 Enregistre ton travail
 
 ###A essayer
-__Comment tu peux faire bouger la sorcière de plus en plus vite ?__
+__Comment tu peux faire bouger la sorcière de plus en plus vite?__
 
 
-__Très bien. Tu as terminé le jeu de base. Mais tu peux encore améliorer le jeu. Relève ces défis !__
+__Très bien. Tu as terminé le jeu de base. Mais tu peux encore améliorer le jeu. Relève ces défis!__
 
 ##Défi : ajoute d’autres sorcières
 
