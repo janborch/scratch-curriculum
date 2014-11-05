@@ -1,5 +1,5 @@
 ---
-title: Chasse aux fantômes
+title: La chasse aux fantômes
 level: Level 1
 language: fr-FR
 stylesheet: scratch
