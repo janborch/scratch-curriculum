@@ -25,11 +25,10 @@ On va jouer au chat et à la souris avec __Félix le chat__ et __Herbert__ la so
 ```scratch
 	quand DRAPEAU pressé
 	répéter indéfiniment
-		s'orienter vers pointeur de souris
-		avancer de 10 pixels
+		s'orienter vers [pointeur de souris v]
+		avancer de (10) pixels
 		costume suivant
-		jouer du tambour 3 pour 0.3 temps
-	(fin répéter indéfiniment)
+		jouer du tambour [3 v] pendant (0.3) temps
 ```
 		
 ## Teste ton projet { .flag }
@@ -56,9 +55,8 @@ Maintenant, nous voulons que Félix poursuive Herbert plutôt que le pointeur de
 ```scratch
 	quand DRAPEAU pressé
 	répéter indéfiniment
-		aller à pointeur de souris
-		s'orienter vers Félix
-	(fin répéter indéfiniment)
+		aller à [pointeur de souris v]
+		s'orienter vers [Félix v]
 ```
 
 ## Teste ton projet { .flag }
@@ -80,14 +78,13 @@ On veut que Félix sache quand il a attrapé Herbert, et qu'il nous le dise.
 ```scratch
 	quand drapeau pressé
 	répéter indéfiniment
-		s'orienter vers pointeur de souris
-		avancer de 10 pixels
+		s'orienter vers [pointeur de souris v]
+		avancer de (10) pixels
 		costume suivant
-		jouer du tambour 3 pour 0.3 temps
-		si Herbert touché? alors
-			dire Je t’ai attrapé! pendant 1 secondes
-		(fin si)
-	(fin répéter indéfiniment)
+		jouer du tambour [3 v] pendant (0.3) temps
+		si <[Herbert v] touché?> alors
+			dire [Je t’ai attrapé!] pendant (1) secondes
+
 ```
 
 ## Teste ton projet { .flag }
@@ -107,16 +104,15 @@ On veut que Herbert sache quand il se fait attraper et se transforme en fantôme
 ```scratch
 	quand drapeau pressé
 	répéter indéfiniment
-		s'orienter vers pointeur de souris
-		avancer de 10 pixels
+		s'orienter vers [pointeur de souris v]
+		avancer de (10) pixels
 		costume suivant
-		jouer du tambour 3 pour 0.3 temps
-		si Herbert touché 
-			envoyer à tous attrapé
-			jouer du tambour 17 pour 0.2 temps
-			attendre 1 secondes
-		(fin si)
-	(fin répéter indéfiniment)
+		jouer du tambour [3 v] pendant (0.3) temps
+		si <[Herbert v] touché?> alors 
+			envoyer à tous [attrapé v]
+			jouer du tambour [17 v] pendant (0.2) temps
+			attendre (1) secondes
+
 ```
 + Ajoute un nouveau costume à Herbert en séléctionnat Herbert, va ensuite dans l'onglet __Costumes__ et clique sur `Choisir un costume dans la bibliothèque` { .blocklightgrey }. Choisis le costume **ghost2-a** dans la catégorie **Fantasie**.
 + Rends le costume plus petit en cliquant sur le costume dans l'éditeur et en déplaçant ensuite les coins qui entourent le costume.
@@ -124,10 +120,10 @@ On veut que Herbert sache quand il se fait attraper et se transforme en fantôme
 + Crée le script suivant pour Herbert, pour le transformer en fantôme :
 
 ```scratch
-	quand je reçois attrapé
-	basculer sur costume mort
-	attendre 1 secondes
-	basculer sur costume vivant
+	quand je reçois [attrapé v]
+	basculer sur costume [mort v]
+	attendre (1) secondes
+	basculer sur costume [vivant v]
 ```
 	
 ## Teste ton projet { .flag }
@@ -149,14 +145,13 @@ Le score commencera à zéro et il sera augmenté d’un point par seconde. Si F
 + Sélectionne la scène et crée les deux scripts suivants:
 ```scratch
 	quand drapeau pressé
-	mettre Score à 0
+	mettre [Score v] à [0]
 	répéter indéfiniment
-		ajouter à Score 1
-		attendre 1 secondes
-	(fin répéter indéfiniment)
+		ajouter à [Score v] (1)
+		attendre (1) secondes
 	
-	quand je reçois Attrapé
-	ajouter à Score -100
+	quand je reçois [Attrapé v]
+	ajouter à [Score v] (-100)
 ```
 	
 ## Teste ton projet { .flag }
