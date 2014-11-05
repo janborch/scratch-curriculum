@@ -3,8 +3,6 @@ title: La chasse aux fantômes
 level: Level 1
 language: fr-FR
 stylesheet: scratch
-embeds: "*.png"
-materials: ["xxxx.sb2"]
 ...
 
 # Introduction { .intro }
@@ -22,10 +20,10 @@ Ce projet est comme le jeu du __Tir aux Pigeons__. Tu gagnes des points en touch
 + Sur la **scène**, tu dois voir écrit __Ghost1: vitesse__. S'il est écrit seulement “vitesse”, supprime la variable et recommence. Lors de la création, il faut s’assurer de cliquer sur le bouton `Pour ce lutin uniquement`. Décoche la case à gauche de la variable vitesse dans **Données**. La variable vitesse va contrôler la vitesse de déplacement du fantôme. Nous allons utiliser cette variable pour pouvoir changer la vitesse au cours du jeu.
 + Nous voulons que le fantôme commence à bouger quand le jeu démarre. __Écris donc un script comme ceci__ :
 ```blocks
-    when FLAG clicked
-        set [vitesse v] to [5]
-        forever
-            move (vitesse) steps
+    quand DRAPEAU pressé
+        mettre [vitesse v] à [5]
+        répéter indéfiniment
+            avancer de (vitesse) pixels
 ```
 		
 ## Teste ton projet { .flag }
@@ -36,13 +34,13 @@ Pourquoi reste-t-il collé dans le coin de l’écran?
 
 ## Liste d'activitées { .check }
 
-+ Pour décoller le fantôme nous devons le faire partir dans l’autre sens quand il touche le bord de l’écran. Au niveau de ton script, ajoute le bloc `if on edge, bounce` { .blockblue } aprés ton bloc `move`{ .blockblue }`vitesse`{ .blockorange }`steps`{ .blockblue }.
++ Pour décoller le fantôme nous devons le faire partir dans l’autre sens quand il touche le bord de l’écran. Au niveau de ton script, ajoute le bloc `rebondir si le bord est atteint` { .blockblue } aprés ton bloc `avancer de`{ .blockblue }`vitesse`{ .blockorange }`pixels`{ .blockblue }.
 ```blocks
-    when FLAG clicked
-        set [vitesse v] to [5]
-        forever
-            move (vitesse) steps
-            if on edge, bounce
+    quand DRAPEAU pressé
+        mettre [vitesse v] à [5]
+        répéter indéfiniment
+            avancer de (vitesse) pixels
+            rebondir si le bord est atteint
 ```
 + Pour que le fantôme n'ait pas la tête en bas quand il touche le bord, clique sur le bouton `Flèche horizontale à 2 pointes`. 
 
@@ -66,12 +64,12 @@ Pour rendre le jeu plus amusant, nous voulons faire apparaître et disparaître 
 
 + Crée ce script pour le fantôme :
 ```blocks
-    when FLAG clicked
-    forever
-        hide
-        wait (pick random (2) to (5)) secs
-        show
-        wait (pick random (3) to (5)) secs
+    quand DRAPEAU pressé
+    répéter indéfiniment
+	cacher
+        attendre (nombre aléatoire entre (2) et (5)) secondes
+        montrer
+        attendre (nombre aléatoire entre (3) et (5)) secondes
 ```
 
 ## Teste ton projet { .flag }
@@ -94,9 +92,9 @@ Pour transformer notre projet en jeu, il faut donner aux joueurs quelque chose �
 + Dans l’onglet **Sons**, ajoute le son **electronique\fairydust** en utilisant le bouton `Choisis un son dans la bibliothèque`. 
 + Ajoute ce script au fantôme:
 ```blocks
-    when this sprite clicked
-        hide
-        play sound [Fairydust v]
+    quand ce lutin est cliqué
+    	cacher
+	jouer le son [Fairydust v]
 ```
 ## Teste ton projet { .flag }
 Clique sur le drapeau vert.
@@ -117,23 +115,23 @@ Nous avons notre fantôme, mais nous voulons réaliser un vrai jeu! Nous voulons
 
 + Crée une nouvelle `variable`, appelle-la **score**. Change ensuite le script du fantôme  pour que le score augmente d’un point chaque fois qu’il est cliqué. 
 ```blocks
-	when this sprite clicked
-    	hide
-	   play sound [Fairydust v]
-	   change [score v] by (1)
+	quand ce lutin est cliqué
+    	cacher
+	   jouer le son [Fairydust v]
+	   ajouter à [score v] (1)
 ```
 
 + Clique sur la **scène** et crée une **nouvelle variable**, appelle-la **temps_restant**. 
 + Ajoute un nouveau script qui s’exécute quand on appuie sur le drapeau vert. Le script met `temps_restant` { .blockorange } à **30** et remet le score à **0**. Ensuite, utilise le bloc `répéter jusqu’à` { .blockyellow } pour attendre une seconde puis diminuer le `temps_restant` { .blockorange } de 1. Il faut répéter tout ça jusqu’à ce que le chronomètre soit à 0, à ce moment là, utilise le bloc `stop tout` { .blockyellow } pour arrêter le jeu. 
 ```blocks
-	when FLAG clicked
-    	set [time_left v] to (30)
-    	set [score v] to (0)
-    	repeat until <(time_left) = [0]>
-    		wait (1) secs
-    		change [time_left v] by (-1)
-    	end
-    	stop [all v]
+	quand DRAPEAU pressé
+    	mettre [temps_restant v] à (30)
+    	mettre [score v] à (0)
+    	répéter jusqu'à <(temps_restant) = [0]>
+    		attendre (1) secondes
+    		ajouter à [temps_restant v](-1)
+    	fin
+    	stop [tout v]
 ```
 
 ## Teste ton projet { .flag }
