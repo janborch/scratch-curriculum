@@ -20,10 +20,10 @@ Ce projet est comme le jeu du __Tir aux Pigeons__. Tu gagnes des points en touch
 + Sur la **scène**, tu dois voir écrit __Ghost1: vitesse__. S'il est écrit seulement “vitesse”, supprime la variable et recommence. Lors de la création, il faut s’assurer de cliquer sur le bouton `Pour ce lutin uniquement`. Décoche la case à gauche de la variable vitesse dans **Données**. La variable vitesse va contrôler la vitesse de déplacement du fantôme. Nous allons utiliser cette variable pour pouvoir changer la vitesse au cours du jeu.
 + Nous voulons que le fantôme commence à bouger quand le jeu démarre. __Écris donc un script comme ceci__ :
 ```blocks
-    quand DRAPEAU pressé
+    quand le DRAPEAU VERT pressé
         mettre [vitesse v] à [5]
         répéter indéfiniment
-            avancer de (vitesse) pixels
+            avancer de (vitesse) pas
 ```
 		
 ## Teste ton projet { .flag }
@@ -36,10 +36,10 @@ Pourquoi reste-t-il collé dans le coin de l’écran?
 
 + Pour décoller le fantôme nous devons le faire partir dans l’autre sens quand il touche le bord de l’écran. Au niveau de ton script, ajoute le bloc `rebondir si le bord est atteint` { .blockblue } aprés ton bloc `avancer de`{ .blockblue }`vitesse`{ .blockorange }`pixels`{ .blockblue }.
 ```blocks
-    quand DRAPEAU pressé
+    quand le DRAPEAU VERT pressé
         mettre [vitesse v] à [5]
         répéter indéfiniment
-            avancer de (vitesse) pixels
+            avancer de (vitesse) pas
             rebondir si le bord est atteint
 ```
 + Pour que le fantôme n'ait pas la tête en bas quand il touche le bord, clique sur le bouton `Flèche horizontale à 2 pointes`. 
@@ -64,7 +64,7 @@ Pour rendre le jeu plus amusant, nous voulons faire apparaître et disparaître 
 
 + Crée ce script pour le fantôme :
 ```blocks
-    quand DRAPEAU pressé
+    quand le DRAPEAU VERT pressé
     répéter indéfiniment
 	cacher
         attendre (nombre aléatoire entre (2) et (5)) secondes
@@ -124,7 +124,7 @@ Nous avons notre fantôme, mais nous voulons réaliser un vrai jeu! Nous voulons
 + Clique sur la **scène** et crée une **nouvelle variable**, appelle-la **temps_restant**. 
 + Ajoute un nouveau script qui s’exécute quand on appuie sur le drapeau vert. Le script met `temps_restant` { .blockorange } à **30** et remet le score à **0**. Ensuite, utilise le bloc `répéter jusqu’à` { .blockyellow } pour attendre une seconde puis diminuer le `temps_restant` { .blockorange } de 1. Il faut répéter tout ça jusqu’à ce que le chronomètre soit à 0, à ce moment là, utilise le bloc `stop tout` { .blockyellow } pour arrêter le jeu. 
 ```blocks
-	quand DRAPEAU pressé
+	quand le DRAPEAU VERT pressé
     	mettre [temps_restant v] à (30)
     	mettre [score v] à (0)
     	répéter jusqu'à <(temps_restant) = [0]>
