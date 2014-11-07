@@ -23,10 +23,10 @@ On va jouer au chat et à la souris avec __Félix le chat__ et __Herbert__ la so
 + Fais en sorte que Félix puisse seulement se retourner horizontalement, de gauche à droite, en cliquant sur ce bouton : <img alt="" class="inline" src="flip_arrows.png">
 + Crée le script suivant:
 ```scratch
-	quand DRAPEAU pressé
+	quand le DRAPEAU VERT pressé
 	répéter indéfiniment
-		s'orienter vers [pointeur de souris v]
-		avancer de (10) pixels
+		se diriger vers [pointeur de souris v]
+		avancer de (10) pas
 		costume suivant
 		jouer du tambour [3 v] pendant (0.3) temps
 ```
@@ -53,10 +53,10 @@ Maintenant, nous voulons que Félix poursuive Herbert plutôt que le pointeur de
 + 
 + **Créé le script suivant pour Herbert:**
 ```scratch
-	quand DRAPEAU pressé
+	quand le DRAPEAU VERT pressé
 	répéter indéfiniment
 		aller à [pointeur de souris v]
-		s'orienter vers [Félix v]
+		se diriger vers [Félix v]
 ```
 
 ## Teste ton projet { .flag }
@@ -76,10 +76,10 @@ On veut que Félix sache quand il a attrapé Herbert, et qu'il nous le dise.
 + Change le script de Félix de la manière suivante:
 
 ```scratch
-	quand drapeau pressé
+	quand le DRAPEAU VERT pressé
 	répéter indéfiniment
-		s'orienter vers [pointeur de souris v]
-		avancer de (10) pixels
+		se diriger vers [pointeur de souris v]
+		avancer de (10) pas
 		costume suivant
 		jouer du tambour [3 v] pendant (0.3) temps
 		si <[Herbert v] touché?> alors
@@ -102,10 +102,10 @@ On veut que Herbert sache quand il se fait attraper et se transforme en fantôme
 
 + Modifie le script de Félix pour envoyer un message quand il attrape Herbert:
 ```scratch
-	quand drapeau pressé
+	quand le DRAPEAU VERT pressé
 	répéter indéfiniment
-		s'orienter vers [pointeur de souris v]
-		avancer de (10) pixels
+		se diriger vers [pointeur de souris v]
+		avancer de (10) pas
 		costume suivant
 		jouer du tambour [3 v] pendant (0.3) temps
 		si <[Herbert v] touché?> alors 
@@ -144,7 +144,7 @@ Le score commencera à zéro et il sera augmenté d’un point par seconde. Si F
 + Crée une variable pour tous les lutins, nommée Score. Choisis pour cela `Données` { .blockorange } dans l’onglet `Scripts`, puis clique sur `Créer une variable`, appelle-la `Score` { .blockorange } et assure-toi que la case "Pour tous les lutins" est bien coché.
 + Sélectionne la scène et crée les deux scripts suivants:
 ```scratch
-	quand drapeau pressé
+	quand le DRAPEAU VERT pressé
 	mettre [Score v] à [0]
 	répéter indéfiniment
 		ajouter à [Score v] (1)
