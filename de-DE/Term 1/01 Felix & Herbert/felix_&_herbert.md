@@ -11,7 +11,7 @@ Wir wollen ein Spiel bauen, bei dem __Felix der Kater__ und __Herbert die Maus__
 Behalte Deinen Fortschritt im Auge, indem Du die Kästchen abhakst, wenn Du die Aufgabe erledigt hast:
 2. ￼￼￼Klicke auf "Bühne" neben der Figur und wechsle zum Tab "Hintergrund". Importiere von dort den Hintergrund "Indoors/Hall". Lösche den ursprünglichen, leeren Hintergrund.
 3. Ändere den Namen der Figur um in "Felix".
-4.  Vergewissere Dich, dass Felix nur nach rechts und nach links zeigt, in dem Du auf diesen Knopf klickst:
+4. Vergewissere Dich, dass Felix nur nach rechts und nach links zeigt, in dem Du auf diesen Knopf klickst:
 5. Schreibe dieses Skript:
 
 ```scratch
@@ -19,7 +19,7 @@ Behalte Deinen Fortschritt im Auge, indem Du die Kästchen abhakst, wenn Du die 
 	Wenn FAHNE angeklickt
 
 	wiederhole fortlaufend
-		gehe zu Mauszeiger
+		zeige auf Mauszeiger
 		gehe 10-er Schritt
 		nächstes Kostüm
 		spiele Schlagzeug 62 für 0.3 Schläge
